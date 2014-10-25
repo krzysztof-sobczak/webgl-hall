@@ -1,0 +1,11 @@
+{
+    "name": "webgl-hall",
+    "version": "0.0.1",
+    "dependencies": {
+        "jquery": "*",
+        "underscore": "*",
+        "gl-matrix": "*"
+    },
+
+    "devDependencies": {}
+}
