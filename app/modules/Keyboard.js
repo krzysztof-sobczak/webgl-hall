@@ -1,10 +1,11 @@
 WGH.modules.Keyboard = (function() {
 
     var state;
+    var pressedKeys;
 
     var Keyboard = function (_state) {
         state = _state;
-        var pressedKeys = {};
+        pressedKeys = {};
 
         document.onkeydown = this.handleKeyDown;
         document.onkeyup = this.handleKeyUp;
@@ -21,27 +22,27 @@ WGH.modules.Keyboard = (function() {
             pressedKeys[event.keyCode] = false;
         },
         handle: function() {
-            if (this.pressedKeys[33]) {
+            if (pressedKeys[33]) {
                 // Page Up
                 this.state.z -= 0.05;
             }
-            if (this.pressedKeys[34]) {
+            if (pressedKeys[34]) {
                 // Page Down
                 this.state.z += 0.05;
             }
-            if (this.pressedKeys[37]) {
+            if (pressedKeys[37]) {
                 // Page Up
                 this.state.x -= 0.05;
             }
-            if (this.pressedKeys[39]) {
+            if (pressedKeys[39]) {
                 // Page Down
                 this.state.x += 0.05;
             }
-            if (this.pressedKeys[40]) {
+            if (pressedKeys[40]) {
                 // Page Up
                 this.state.y -= 0.05;
             }
-            if (this.pressedKeys[38]) {
+            if (pressedKeys[38]) {
                 // Page Down
                 this.state.y += 0.05;
             }
