@@ -90,6 +90,9 @@ WGH.core.ShaderProgram = (function() {
         },
         setUniformValue: function(key, value) {
             GL.uniform1f(uniforms[key], value);
+        },
+        getUniforms: function() {
+            return uniforms;
         }
     };
 

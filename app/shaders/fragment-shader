@@ -6,10 +6,12 @@ uniform vec3 uAmbientColor;
 uniform vec3 uPointLightingLocation;
 uniform vec3 uPointLightingSpecularColor;
 uniform vec3 uPointLightingDiffuseColor;
+uniform sampler2D uSampler;
 
 varying vec4 vColor;
 varying vec3 vTransformedNormal;
 varying vec4 vPosition;
+varying vec2 vTextureCoord;
 
 void main(void) {
     vec3 lightWeighting;
@@ -30,5 +32,6 @@ void main(void) {
         + uPointLightingSpecularColor * specularLightWeighting
         + uPointLightingDiffuseColor * diffuseLightWeighting;
 
-    gl_FragColor = vec4(vColor.rgb * lightWeighting, vColor.a);
+    //gl_FragColor = vec4(vColor.rgb * lightWeighting, vColor.a);
+    gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
 }

@@ -13,11 +13,13 @@ WGH.objects.Drawable = (function() {
         GL = WGH.core.GL.getInstance();
         positionBuffer = new WGH.core.VertexBufferObject();
         colorBuffer = new WGH.core.VertexBufferObject();
+        textureBuffer = new WGH.core.VertexBufferObject();
         normalBuffer = new WGH.core.VertexBufferObject();
         indexBuffer = new WGH.core.IndexBufferObject();
 
         positionBuffer.init(primitive.getVertices().elements, primitive.getVertices().itemSize, primitive.getVertices().numItems);
         colorBuffer.init(primitive.getColors().elements, primitive.getColors().itemSize, primitive.getColors().numItems);
+        textureBuffer.init(primitive.getTexture().elements, primitive.getTexture().itemSize, primitive.getTexture().numItems);
         normalBuffer.init(primitive.getNormals().elements, primitive.getNormals().itemSize, primitive.getNormals().numItems);
         indexBuffer.init(primitive.getIndices().elements, primitive.getIndices().itemSize, primitive.getIndices().numItems);
     };
@@ -28,7 +30,13 @@ WGH.objects.Drawable = (function() {
             positionBuffer.bind(shaderProgram.getAttribute("vertexPositionAttribute"));
             normalBuffer.bind(shaderProgram.getAttribute("vertexNormalAttribute"));
             colorBuffer.bind(shaderProgram.getAttribute("vertexColorAttribute"));
+            textureBuffer.bind(shaderProgram.getAttribute("textureCoordAttribute"));
             indexBuffer.bind();
+
+            var texture = WGH.textures.Texture.getInstance().getTexture();
+            GL.activeTexture(GL.TEXTURE0);
+            GL.bindTexture(GL.TEXTURE_2D, texture);
+            GL.uniform1i(shaderProgram.getUniforms()["samplerUniform"], 0);
 
             var normalMatrix = mat3.create();
             mat3.fromMat4(normalMatrix, modelViewMatrix);

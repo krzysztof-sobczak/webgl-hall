@@ -24,7 +24,9 @@ WGH.core.WebGL = (function(){
         shaderProgram.addAttribute("vertexPositionAttribute", "aVertexPosition");
         shaderProgram.addAttribute("vertexNormalAttribute", "aVertexNormal");
         shaderProgram.addAttribute("vertexColorAttribute", "aVertexColor");
+        shaderProgram.addAttribute("textureCoordAttribute", "aTextureCoord");
 
+        shaderProgram.addUniform("samplerUniform", "uSampler");
         shaderProgram.addUniform("pMatrixUniform", "uPMatrix");
         shaderProgram.addUniform("mvMatrixUniform", "uMVMatrix");
         shaderProgram.addUniform("nMatrixUniform", "uNMatrix");
@@ -57,6 +59,7 @@ WGH.core.WebGL = (function(){
                 GL.enable(GL.DEPTH_TEST);                                     // Enable depth testing
                 GL.depthFunc(GL.LEQUAL);                                      // Near things obscure far things
                 GL.clear(GL.COLOR_BUFFER_BIT | GL.DEPTH_BUFFER_BIT);     // Clear the color as well as the depth buffer.
+
             } else {
                 throw new Error("WebGL is not initialized.");
             }

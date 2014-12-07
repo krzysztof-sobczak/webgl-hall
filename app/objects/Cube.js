@@ -125,6 +125,48 @@ WGH.objects.Cube = (function() {
             numItems: 24
         };
 
+        texture = {
+            elements: [
+            // Front face
+            0.0, 0.0,
+            1.0, 0.0,
+            1.0, 1.0,
+            0.0, 1.0,
+
+            // Back face
+            1.0, 0.0,
+            1.0, 1.0,
+            0.0, 1.0,
+            0.0, 0.0,
+
+            // Top face
+            0.0, 1.0,
+            0.0, 0.0,
+            1.0, 0.0,
+            1.0, 1.0,
+
+            // Bottom face
+            1.0, 1.0,
+            0.0, 1.0,
+            0.0, 0.0,
+            1.0, 0.0,
+
+            // Right face
+            1.0, 0.0,
+            1.0, 1.0,
+            0.0, 1.0,
+            0.0, 0.0,
+
+            // Left face
+            0.0, 0.0,
+            1.0, 0.0,
+            1.0, 1.0,
+            0.0, 1.0
+            ],
+            itemSize: 2,
+            numItems: 24
+        };
+
         indices = {
             elements: [
                 0, 1, 2,      0, 2, 3,    // Front face
@@ -148,6 +190,9 @@ WGH.objects.Cube = (function() {
         },
         getColors: function() {
             return colors;
+        },
+        getTexture: function() {
+            return texture;
         },
         getIndices: function() {
             return indices;
