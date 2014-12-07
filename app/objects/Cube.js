@@ -1,7 +1,7 @@
 /**
  * Created by giks on 30.10.14.
  */
-WGH.modules.Cube = (function() {
+WGH.objects.Cube = (function() {
 
     var vertices;
     var normals;

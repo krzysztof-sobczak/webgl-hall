@@ -1,4 +1,4 @@
-WGH.modules.Animation = (function() {
+WGH.core.Animation = (function() {
 
     var webGL;
     var handlers;

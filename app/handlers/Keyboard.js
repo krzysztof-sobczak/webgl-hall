@@ -1,4 +1,4 @@
-WGH.modules.Keyboard = (function() {
+WGH.handlers.Keyboard = (function() {
 
     var state;
     var pressedKeys;

@@ -1,4 +1,4 @@
-WGH.modules.WebGL = (function(){
+WGH.core.WebGL = (function(){
 
     var GL;
     var shaderProgram;
@@ -8,8 +8,8 @@ WGH.modules.WebGL = (function(){
 
     var WebGL = function (_canvas) {
         canvas = _canvas;
-        GL = WGH.modules.GL.createInstance(canvas);
-        shaderProgram = new WGH.modules.ShaderProgram();
+        GL = WGH.core.GL.createInstance(canvas);
+        shaderProgram = new WGH.core.ShaderProgram();
         setShaders();
         projectionMatrix = mat4.create();
         modelViewMatrix = mat4.create();
@@ -43,8 +43,8 @@ WGH.modules.WebGL = (function(){
             mat4.translate(modelViewMatrix, modelViewMatrix, [state.x, state.y, state.z]);
             mat4.scale(modelViewMatrix, modelViewMatrix, [6.0, 1.0, 6.0]);
 
-            var cubeData = new WGH.modules.Cube();
-            var drawableCube = new WGH.modules.Drawable(cubeData);
+            var cubeData = new WGH.objects.Cube();
+            var drawableCube = new WGH.objects.Drawable(cubeData);
             drawableCube.draw(shaderProgram, projectionMatrix, modelViewMatrix, state);
         },
         drawScene: function() {

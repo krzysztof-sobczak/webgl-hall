@@ -7,12 +7,12 @@ WGH.modules.Main = (function() {
 
     var Main = function (_canvas) {
         state = WGH.modules.State.getInstance();
-        keyboard = new WGH.modules.Keyboard(state);
+        keyboard = new WGH.handlers.Keyboard(state);
 
-        webGL = new WGH.modules.WebGL(_canvas);
+        webGL = new WGH.core.WebGL(_canvas);
         webGL.init();
 
-        animation = new WGH.modules.Animation(webGL);
+        animation = new WGH.core.Animation(webGL);
         animation.addHandler(keyboard);
         animation.start();
     };

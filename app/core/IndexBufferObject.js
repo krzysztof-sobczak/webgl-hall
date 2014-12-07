@@ -1,12 +1,12 @@
 /**
  * Created by giks on 30.10.14.
  */
-WGH.modules.IndexBufferObject = (function() {
+WGH.core.IndexBufferObject = (function() {
 
     var GL;
 
     var IndexBufferObject = function() {
-        GL = WGH.modules.GL.getInstance();
+        GL = WGH.core.GL.getInstance();
         this.buffer = GL.createBuffer();
         this.itemSize = null;
         this.numItems = null;

@@ -1,4 +1,4 @@
-WGH.modules.ShaderProgram = (function() {
+WGH.core.ShaderProgram = (function() {
 
     var SHADERS_PATH = "app/shaders/";
     var FRAGMENT_TYPE_PREFIX = "fragment";
@@ -10,7 +10,7 @@ WGH.modules.ShaderProgram = (function() {
     var uniforms;
 
     var ShaderProgram = function () {
-        GL = WGH.modules.GL.getInstance();
+        GL = WGH.core.GL.getInstance();
         GLShaderProgram = GL.createProgram();
         shaders = [];
         attributes = {};

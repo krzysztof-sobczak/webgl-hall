@@ -1,4 +1,4 @@
-WGH.modules.GL = (function() {
+WGH.core.GL = (function() {
 
     var instance;
 

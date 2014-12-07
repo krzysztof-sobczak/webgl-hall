@@ -1,7 +1,7 @@
 /**
  * Created by giks on 30.10.14.
  */
-WGH.modules.Drawable = (function() {
+WGH.objects.Drawable = (function() {
 
     var GL;
     var positionBuffer;
@@ -10,11 +10,11 @@ WGH.modules.Drawable = (function() {
     var indexBuffer;
 
     var Drawable = function(primitive) {
-        GL = WGH.modules.GL.getInstance();
-        positionBuffer = new WGH.modules.VertexBufferObject();
-        colorBuffer = new WGH.modules.VertexBufferObject();
-        normalBuffer = new WGH.modules.VertexBufferObject();
-        indexBuffer = new WGH.modules.IndexBufferObject();
+        GL = WGH.core.GL.getInstance();
+        positionBuffer = new WGH.core.VertexBufferObject();
+        colorBuffer = new WGH.core.VertexBufferObject();
+        normalBuffer = new WGH.core.VertexBufferObject();
+        indexBuffer = new WGH.core.IndexBufferObject();
 
         positionBuffer.init(primitive.getVertices().elements, primitive.getVertices().itemSize, primitive.getVertices().numItems);
         colorBuffer.init(primitive.getColors().elements, primitive.getColors().itemSize, primitive.getColors().numItems);

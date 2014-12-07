@@ -1,7 +1,7 @@
 /**
  * Created by giks on 30.10.14.
  */
-WGH.modules.Primitive = (function () {
+WGH.objects.Primitive = (function () {
 
     var vertices;
     var normals;

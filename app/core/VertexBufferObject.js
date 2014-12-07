@@ -1,12 +1,12 @@
 /**
  * Created by giks on 30.10.14.
  */
-WGH.modules.VertexBufferObject = (function() {
+WGH.core.VertexBufferObject = (function() {
 
     var GL;
 
     var VertexBufferObject = function() {
-        GL = WGH.modules.GL.getInstance();
+        GL = WGH.core.GL.getInstance();
         this.buffer = GL.createBuffer();
         this.itemSize = null;
         this.numItems = null;
