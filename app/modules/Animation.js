@@ -25,7 +25,8 @@ WGH.modules.Animation = (function() {
                 handlers.forEach(function(handler) {
                     handler.handle();
                 });
-                //webGL.draw(state);
+                var state = WGH.modules.State.getInstance();
+                webGL.draw(state);
             }
 
             tick();

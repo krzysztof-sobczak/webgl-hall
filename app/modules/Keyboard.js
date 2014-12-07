@@ -22,29 +22,29 @@ WGH.modules.Keyboard = (function() {
             pressedKeys[event.keyCode] = false;
         },
         handle: function() {
-            if (pressedKeys[33]) {
+            if (pressedKeys[87]) {
                 // Page Up
-                this.state.z -= 0.05;
+                state.z -= 0.05;
             }
-            if (pressedKeys[34]) {
+            if (pressedKeys[83]) {
                 // Page Down
-                this.state.z += 0.05;
+                state.z += 0.05;
             }
             if (pressedKeys[37]) {
                 // Page Up
-                this.state.x -= 0.05;
+                state.x -= 0.05;
             }
             if (pressedKeys[39]) {
                 // Page Down
-                this.state.x += 0.05;
+                state.x += 0.05;
             }
             if (pressedKeys[40]) {
                 // Page Up
-                this.state.y -= 0.05;
+                state.y -= 0.05;
             }
             if (pressedKeys[38]) {
                 // Page Down
-                this.state.y += 0.05;
+                state.y += 0.05;
             }
         }
     };

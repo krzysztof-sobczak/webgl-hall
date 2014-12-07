@@ -40,6 +40,9 @@ WGH.modules.ShaderProgram = (function() {
                     if (!GL.getShaderParameter(shader, GL.COMPILE_STATUS)) {
                         throw new Error(GL.getShaderInfoLog(shader));
                     }
+
+                    var info = GL.getShaderInfoLog(shader);
+                    return info;
                 }
 
             });
@@ -58,7 +61,7 @@ WGH.modules.ShaderProgram = (function() {
             });
             GL.linkProgram(GLShaderProgram);
             if (!GL.getProgramParameter(GLShaderProgram, GL.LINK_STATUS)) {
-                throw new Error("Could not initialise shaders");
+                throw new Error("Could not initialize shaders");
             }
             GL.useProgram(GLShaderProgram);
         },
